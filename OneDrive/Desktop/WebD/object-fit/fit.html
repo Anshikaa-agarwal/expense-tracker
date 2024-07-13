@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #cover{
+            object-fit: cover;
+        }
+        #contain{
+            object-fit: contain;
+        }
+        #fill{
+            object-fit: fill;
+        }
+        #none{
+            object-fit: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="image">
+        <img src="dog.jpg" alt="">
+    </div>
+    <div class="box">
+        <h3>normal</h3>
+        <img src="dog.jpg" alt="" id="normal">
+    </div>
+    <div class="box">
+        <h3>cover</h3>
+        <img src="dog.jpg" alt="" id="cover">
+    </div>
+    <div class="box">
+        <h3>contain</h3>
+        <img src="dog.jpg" alt="" id="contain">
+    </div>
+    <div class="box">
+        <h3>fill</h3>
+        <img src="dog.jpg" alt="" id="fill">
+    </div>
+    <div class="box">
+        <h3>none</h3>
+        <img src="dog.jpg" alt="" id="none">
+    </div>
+</body>
+</html>

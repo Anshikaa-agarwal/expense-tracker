@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "This is a beautiful website.";
+        //Length of string
+        console.log(`Length of string is ${str.length}`);
+        //First Occurence
+        console.log(`First occurance of 'is' is at index ${str.indexOf('is')}`);
+        //Last Occurence
+        console.log(`Last occurance of 'is' is at index ${str.lastIndexOf('is')}`);
+        //Substring of a string
+        console.log(`Substring using slice: ${str.slice(3,12)}`);
+        //Substring using substr
+        console.log(`Substring using str: ${str.substr(2,11)}`);
+        //Replace
+        let newstr = str.replace('beautiful', 'wonderful');
+        console.log(newstr);
+        //Change to upper case
+        console.log(`Changing to uppercase: ${str.toUpperCase()}`);
+        //Change to lower case
+        console.log(`Changing to lower case: ${str.toLowerCase()}`);
+        //Concatenation
+        let str1 = str.concat(" " + "Wonderful!");
+        console.log(str1);
+
+    </script>
+</body>
+</html>

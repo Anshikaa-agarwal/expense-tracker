@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .webteam {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #181b2f;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .user-card {
+            width: 300px;
+            height: 350px; /* Adjusted height */
+            overflow: hidden;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #3498db 40%, #ffffff 40%); 
+            position: relative;
+            margin: 20px;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.3s;
+        }
+
+        .user-card:hover {
+            transform: perspective(1000px) rotateX(11deg); 
+        }
+
+        .user-photo {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%;
+            border: 5px solid #fff;
+            position: absolute;
+            top: 40%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+
+        .user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-details {
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .user-details h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .user-details p {
+            margin: 10px 0;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="webteam">
+
+        <div class="user-card">
+            <div class="user-photo">
+                <img src="m.jpg" alt="User Photo">
+            </div>
+            <div class="user-details">
+                <h2>Mayer Goyal</h2>
+                <p>Tech Volunteer</p>
+            </div>
+        </div>
+    
+        <div class="user-card">
+            <div class="user-photo">
+                <img src="y.jpg" alt="User Photo">
+            </div>
+            <div class="user-details">
+                <h2>Yashvardhan Jain</h2>
+                <p>Tech Volunteer</p>
+            </div>
+        </div>
+    
+        <div class="user-card">
+            <div class="user-photo">
+                <img src="a2.jpg" alt="User Photo">
+            </div>
+            <div class="user-details">
+                <h2>Anshika Agarwal</h2>
+                <p>Tech Volunteer</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

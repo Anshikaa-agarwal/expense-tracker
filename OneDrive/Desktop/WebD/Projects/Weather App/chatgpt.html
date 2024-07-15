@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <label for="city">Enter City:</label>
+    <input type="text" id="city">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather-info"></div>
+
+    <script>
+        function getWeather() {
+            // Get the user input (city name)
+            var city = document.getElementById('city').value;
+            
+            // API endpoint and your API key from OpenWeatherMap
+            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4ef51ca1bc1a4f70c6fdb7e5afa56da1';
+             // Make a GET request to the OpenWeatherMap API
+            fetch(apiUrl)
+                .then(response => {
+                    // Check if the request was successful (status code 200) 
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the JSON response
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the weather data from the API
+                    var weatherInfo = document.getElementById('weather-info');
+                    weatherInfo.innerHTML = `
+                        <h2>Weather in ${data.name}, ${data.sys.country}</h2>
+                        <p>Temperature: ${data.main.temp - 273} &deg;C</p>
+                        <p>Weather: ${data.weather[0].description}</p>
+                    `;
+                })
+                .catch(error => {
+                    // Handle errors
+                    var weatherInfo = document.getElementById('weather-info');
+                    weatherInfo.innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>

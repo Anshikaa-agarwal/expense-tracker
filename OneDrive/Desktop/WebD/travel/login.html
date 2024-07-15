@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    font-family: 'poppins',sans-serif;
+}
+.container{
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(to right,#36D1DC,#5B86E5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+
+.formbox{
+   
+    width:90%;
+    max-width: 450px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color: aliceblue;
+    
+    
+    
+}
+.formbox h1{
+    margin-bottom: 35px;
+    position: relative;
+    margin-top: 20px;
+}
+.formbox h1::after{
+    content:'';
+    width:30px;
+    height:4px;
+    border-radius: 5px;
+    position: absolute;
+    bottom:-12px;
+    left:50%;
+    transform: translateX(-50%);
+    background:black;
+
+}
+.input-field{
+    margin:5px;
+    padding: 0 5px;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    max-height: 65px;
+    transition:max-height 1s;
+    overflow:hidden;
+}
+.input-field i{
+    margin-left:10px;
+    margin-right: 10px;
+    
+}
+input{
+    width:100%;
+    background-color:white;
+    border:0;
+    outline:0;
+    padding:12px 9px
+
+}
+form p{
+    color:blue;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left:15px;
+}
+a{
+    text-decoration: none;
+}
+.buttonfield{
+    width:100%;
+    display :flex;
+    justify-content: space-around;
+}
+
+.buttonfield button{
+    flex-basis:48%;
+    background-color:blue;
+    height:40px;
+    border-radius: 20px;
+    border:0;
+    outline:0;
+    cursor: pointer;
+    transition: background 1s;
+    margin-bottom: 25px;
+}
+.buttonfield button.disable{
+    background-color:white;
+    color:#555;}
+
+.input-group{
+    height:220px;
+}
+    </style>
+    <script src="https://kit.fontawesome.com/a2ef35e1b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="formbox">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-field "id="mailfield1">
+                        <i class="fa-solid fa-envelope" ></i>
+                        <input type="email"  placeholder="Email">
+                    </div>
+                        <div class="input-field "id="mailfield2">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Enter Your Email">
+                        </div>
+                    <div class="input-field "id="pw-1">
+                        <i class="fa-solid fa-key"></i></i>
+                        <input type="password" placeholder="Enter New Password">
+                    </div>
+                    <div class="input-field" id="pw-2">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id ="password" placeholder="Confirm Password">
+                    </div>
+                    <div class="input-field" id="pw-3">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password"  placeholder="Enter Your Password">
+                    </div>
+                    <p id="hide2">Lost Password?<a href="#">Click Here!</a></p>
+                </div>
+                <div class="buttonfield">
+                    <button type="button" id ="signupbtn">Sign Up</button>
+                    <button type="button"id="signinbtn" class="disable">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let signinbtn=document.getElementById("signinbtn")
+        let signupbtn=document.getElementById("signupbtn")
+        let mailfield1=document.getElementById("mailfield1")
+        let mailfield2=document.getElementById("mailfield2")
+        let namefield=document.getElementById("namefield")
+        let title=document.getElementById("title")
+        let hide2=document.getElementById("hide2")
+        let password=document.getElementById("password")
+        let pw1 =document.getElementById("pw-1")
+        let pw2 =document.getElementById("pw-2")
+        let pw3 =document.getElementById("pw-3")
+        signinbtn.onclick=function(){
+            mailfield1.style.maxHeight="0";
+            mailfield2.style.maxHeight="65px";
+            pw1.style.maxHeight="0px";
+            pw2.style.maxHeight="0px";
+            pw3.style.maxHeight="65px";
+            namefield.style.maxHeight="0";
+            title.innerHTML="Login";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+            document.getElementById("hide2").innerHTML="Lost Password? Click Here!"
+            password.placeholder=" Confirm Password"
+             }
+        signupbtn.onclick=function(){
+            mailfield1.style.maxHeight="65px";
+            mailfield2.style.maxHeight="0px";
+            pw1.style.maxHeight="65px";
+            pw2.style.maxHeight="65px";
+            pw3.style.maxHeight="0px";
+            namefield.style.maxHeight="65px";
+            title.innerHTML="Sign Up";
+            signupbtn.classList.remove("disable");
+            signinbtn.classList.add("disable");
+            document.getElementById("hide2").innerHTML="Welcome Aboard!";
+            
+             }
+
+    </script>
+    
+</body>
+</html>

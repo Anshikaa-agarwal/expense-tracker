@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="myForm" id="myForm" onsubmit="return validate()">
+        <table>
+            <tr>
+                <td><label for="fname">First name:</label></td>
+                <td><input type="text" id="fname" name="fname"></td>
+            </tr>
+            <tr>
+                <td><label for="fam">Family name:</label></td>
+                <td><input type="text" id="fam" name="fam"></td>
+            </tr>
+            <tr>
+                <td><label for="tele">Telephone number:</label></td>
+                <td><input type="tel" id="tele" name="tele"></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Submit">
+        <input type="button" onclick="reset()" value="Clear and reset form">
+    </form>
+
+
+    <!-- <button onclick="alert('koe')">hello</button> -->
+    <script>
+        function validate()
+        {
+            let fname = document.myForm.fname.value;
+            let fam = document.myForm.fam.value;
+            let telephone = document.myForm.tele.value;
+            if(fname.length==0)
+            {
+                alert("Name can not be blank");
+                return false;
+            }
+            if(fname.length>20)
+            {
+                alert("Name should be less than 20 characters long.");
+                return false;
+            }
+
+            if(fam.length==0)
+            {
+                alert("Family name can not be blank");
+                return false;
+            }
+            if(fam.length>30)
+            {
+                alert("Family name should not be more than 30 characters long");
+                return false;
+            }
+
+            if(telephone.length!=10 || isNaN(telephone))
+            {
+                alert("Telephone number must be a 10 digit numeric value.")
+                return 0;
+            }
+        }
+
+        function reset()
+        {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+</body>
+</html>

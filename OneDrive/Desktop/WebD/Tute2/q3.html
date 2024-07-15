@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: large;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .form{
+            border: 1px solid black;
+            border-radius: 4px;
+            display: flex;
+            width: max-content;
+            height: 300px;
+            padding: 10px;
+            flex-direction: column;
+            margin-top: 150px;
+            background-color:#2e5063;
+            box-shadow: #16222A -5px 5px 5px;
+        }
+        .up, .down, .button-container{
+            margin-top: 10px;
+        }
+        .button-container{
+            display: flex;
+            justify-content: center;
+        }
+        .value{
+            /* border: 1px solid black; */
+            width: 70%;
+            height: max-content;
+        }
+        .btn{
+            margin: 5px;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+            width: 100vw;
+            top: 50%;
+            background-image: linear-gradient(to right, #16222A, #3A6073);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="#" class="form">
+
+            <div class="container">
+                <div class="inputboxes">
+                    <div class="up">
+                        <label for="num1">1st Number: </label>
+                        <input type="text" id="num1"> <br> 
+                    </div>
+        
+                    <div class="down">
+                        <label for="num1">2nd Number: </label>
+                        <input type="text" id="num2">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="button-container">
+                <button id="multiply" class="btn" onclick="multiply()">Multiply</button>
+                <button id="divide" class="btn" onclick="divide()">Divide</button>
+            </div>
+    
+            <div class="result">
+                <p>Result: </p>
+                <p class="value"></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let num1;
+        let num2;
+        let result;
+        let text;
+
+        text = document.querySelector(".value")
+        // num1 = document.querySelector("#num1");
+        // num2 = document.querySelector("#num2");
+
+        function multiply(){
+            num1 = parseFloat(document.querySelector("#num1").value);
+            num2 = parseFloat(document.querySelector("#num2").value);
+            result = num1 * num2;
+            text.innerText = result;
+        }
+
+        function divide(){
+            num1 = parseFloat(document.querySelector("#num1").value);
+            num2 = parseFloat(document.querySelector("#num2").value);
+            result = num1 / num2;
+            text.innerText = result;
+        }
+
+
+    </script>
+</body>
+</html>

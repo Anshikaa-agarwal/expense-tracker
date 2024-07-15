@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab Evaluation 1</title>
+    <style>
+        table, td, tr{
+            border: 1px solid black;
+            
+        }
+
+        table{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm" action="https://www.google.com" onsubmit="return display()">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name"> <br>
+
+        <label for="mail">Email: </label>
+        <input type="email" name="mail" id="mail"> <br>
+
+        Gender:
+        <input type="radio" name="name" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="name" id="female" value="Female">
+        <label for="female">Female</label> <br>
+
+        <label for="phone">Phone No. :</label>
+        <input type="tel" name="phone" id="phone"> <br>
+
+        <label for="wexp">Work Experience: </label>
+        <input type="number" name="wexp" id="wexp" min="0"> <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <table id="tablee">
+        <tr>
+            <td>Name</td>
+            <td id="tname"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td id="tmail"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td id="tgender"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td id="tphone"></td>
+        </tr>
+        <tr>
+            <td>Work Experience</td>
+            <td id="texp"></td>
+        </tr>
+    </table>
+
+    <script>
+        function display()
+        {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("mail").value;
+            // let gender = document.querySelector("input[name='gender']:checked");
+            let phone = document.getElementById("phone").value;
+            let work = document.getElementById("wexp").value;
+
+            let male = document.getElementById("male");
+            let female = document.getElementById("female");
+
+            document.getElementById("tname").textContent=name;
+            document.getElementById("tmail").textContent=email;
+            if(male.checked)
+            {
+                document.getElementById("tgender").innerHTML="male";   
+            }
+            else if(female.checked)
+            {
+                document.getElementById("tgender").innerHTML="female";   
+            }
+            document.getElementById("tphone").textContent=phone;
+            document.getElementById("texp").textContent=work;
+            event.preventDefault();
+
+            let table = document.getElementById("tablee");
+            table.style.visibility="visible";
+        }
+    </script>
+</body>
+</html>

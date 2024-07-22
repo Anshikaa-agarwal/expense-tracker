@@ -6,5 +6,7 @@ print(myvar)
 ns = pd.Series(arr, index=["index1", "index2", "index3"])
 print(ns)  
 
-s = [(1,2), (4,5,6)]
+s = [("a","b","c"), ("d","e","f")]
 print(pd.Series(s))
+
+print(pd.DataFrame(s))

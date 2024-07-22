@@ -10,3 +10,5 @@ s = [("a","b","c"), ("d","e","f")]
 print(pd.Series(s))
 
 print(pd.DataFrame(s))
+
+print(s)

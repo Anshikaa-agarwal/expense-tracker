@@ -11,4 +11,5 @@ print(pd.Series(s))
 
 print(pd.DataFrame(s))
 print(ns)
+print(ns)
 print(s)

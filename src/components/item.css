@@ -1,0 +1,42 @@
+.item {
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(241, 247, 253);
+    border-radius: 8px;
+    border: 1px solid #d2dde8;
+}
+
+.iteminside {
+    padding: 0 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.sno {
+    width: 10%;
+    text-align: center;
+    font-weight: 500;
+    color: #495057;
+}
+
+.description {
+    width: 60%;
+    text-align: left;
+    color: #343a40;
+}
+
+.sign {
+    width: 10%;
+    text-align: center;
+    font-weight: 700;
+}
+
+.amount {
+    width: 20%;
+    text-align: right;
+    font-weight: 500;
+    color: #007bff;
+}
